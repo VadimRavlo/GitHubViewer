@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="#d4ffd6"
+	android:paddingLeft="@dimen/activity_horizontal_margin"
+	android:paddingRight="@dimen/activity_horizontal_margin"
+	android:paddingTop="@dimen/activity_vertical_margin"
+	android:paddingBottom="@dimen/activity_vertical_margin">
+
+	<TextView
+		style="@style/GeneralTextView"
+		android:text="@string/welcome_home_developers"
+		android:textSize="20sp"
+		android:layout_margin="10dp"
+		android:textColor="@android:color/black"/>
+	<TextView
+		style="@style/GeneralTextView"
+		android:text="@string/github_fosters"
+		android:textSize="14sp"
+		android:layout_marginBottom="10dp"/>
+
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/view_username"
+		android:hint="@string/username" />
+
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/view_password"
+		android:inputType="textPassword"
+		android:hint="@string/password" />
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp">
+
+		<TextView
+			style="@style/SigninButton"
+			android:id="@+id/view_submit"
+			android:background="@drawable/btn_green"
+			android:text="@string/sign_in"/>
+
+		<ProgressBar
+			style="@android:style/Widget.Holo.ProgressBar"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/view_progress"
+			android:layout_alignLeft="@id/view_submit"
+			android:layout_alignTop="@id/view_submit"
+			android:layout_alignBottom="@id/view_submit"
+			android:visibility="gone"/>
+
+	</RelativeLayout>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<LinearLayout style="@style/SigninFooterLL">
+			<ImageView
+				style="@style/SigninFooterImageView"
+				android:src="@drawable/home_1_ill_build"/>
+			<TextView style="@style/SigninFooterTextView"
+				android:textStyle="bold"
+				android:text="@string/title_1_signin_footer"
+				android:layout_marginBottom="5dp"/>
+			<TextView style="@style/SigninFooterTextView"
+				android:text="@string/text_1_signin_footer"/>
+		</LinearLayout>
+		<LinearLayout style="@style/SigninFooterLL">
+			<ImageView
+				style="@style/SigninFooterImageView"
+				android:src="@drawable/home_2_ill_work"/>
+			<TextView style="@style/SigninFooterTextView"
+				android:textStyle="bold"
+				android:text="@string/title_2_signin_footer"
+				android:layout_marginBottom="5dp"/>
+			<TextView style="@style/SigninFooterTextView"
+				android:text="@string/text_2_signin_footer"/>
+		</LinearLayout>
+		<LinearLayout style="@style/SigninFooterLL">
+			<ImageView
+				style="@style/SigninFooterImageView"
+				android:src="@drawable/home_3_ill_projects"/>
+			<TextView style="@style/SigninFooterTextView"
+				android:textStyle="bold"
+				android:text="@string/title_3_signin_footer"
+				android:layout_marginBottom="5dp"/>
+			<TextView style="@style/SigninFooterTextView"
+				android:text="@string/text_3_signin_footer"/>
+		</LinearLayout>
+		<LinearLayout style="@style/SigninFooterLL">
+			<ImageView
+				style="@style/SigninFooterImageView"
+				android:src="@drawable/home_4_ill_platform"/>
+			<TextView style="@style/SigninFooterTextView"
+				android:textStyle="bold"
+				android:text="@string/title_4_signin_footer"
+				android:layout_marginBottom="5dp"/>
+			<TextView style="@style/SigninFooterTextView"
+				android:text="@string/text_4_signin_footer"/>
+		</LinearLayout>
+	</LinearLayout>
+
+</LinearLayout>
