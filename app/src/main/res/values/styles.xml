@@ -24,22 +24,31 @@
 		<item name="android:layout_gravity">center_horizontal|center_vertical</item>
 	</style>
 
-	<style name="SigninFooterLL">
-		<item name="android:layout_width">70dp</item>
+	<style name="SigninFooterTitleLL">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:layout_gravity">center_horizontal</item>
+	</style>
+
+	<style name="SigninFooterItemLL">
+		<item name="android:layout_width">wrap_content</item>
 		<item name="android:layout_height">match_parent</item>
+		<item name="android:layout_weight">1</item>
 		<item name="android:orientation">vertical</item>
 		<item name="android:layout_marginRight">3dp</item>
+		<item name="android:layout_gravity">center_horizontal</item>
 	</style>
 
 	<style name="SigninFooterImageView">
 		<item name="android:layout_width">match_parent</item>
-		<item name="android:layout_height">90dp</item>
+		<item name="android:layout_height">80dp</item>
 	</style>
 
 	<style name="SigninFooterTextView">
 		<item name="android:layout_width">match_parent</item>
 		<item name="android:layout_height">wrap_content</item>
-		<item name="android:textSize">10dp</item>
+		<item name="android:textSize">14sp</item>
 		<item name="android:textColor">#2d2a2a</item>
 		<item name="android:gravity">center_horizontal|center_vertical</item>
 	</style>

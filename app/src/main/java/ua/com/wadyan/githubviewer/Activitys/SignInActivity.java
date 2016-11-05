@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import ua.com.wadyan.githubviewer.GlobalConstVar;
 import ua.com.wadyan.githubviewer.R;
 import ua.com.wadyan.githubviewer.signin.SignInModel;
 import ua.com.wadyan.githubviewer.signin.SignInWorkerFragment;
@@ -20,12 +19,12 @@ import static ua.com.wadyan.githubviewer.GlobalConstVar.LOG_TAG;
 public class SignInActivity extends Activity implements SignInModel.Observer {
 	private static final String TAG_WORKER = "TAG_WORKER";
 
-	@Bind(R.id.view_username) EditText mUserName;
-	@Bind(R.id.view_password) EditText mPassword;
-	@Bind(R.id.view_submit) View mSubmit;
-	@Bind(R.id.view_progress) View mProgress;
+	@Bind(R.id.view_username) EditText userName;
+	@Bind(R.id.view_password) EditText password;
+	@Bind(R.id.view_submit) View submit;
+	@Bind(R.id.view_progress) View progress;
 
-	private SignInModel mSignInModel;
+	private SignInModel signInModel;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +33,13 @@ public class SignInActivity extends Activity implements SignInModel.Observer {
 		setContentView(R.layout.activity_sign_in);
 		ButterKnife.bind(this);
 
-		mSubmit.setOnClickListener(new View.OnClickListener() {
+		submit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(final View v) {
-				final String userName = mUserName.getText().toString();
-				final String password = mPassword.getText().toString();
+				final String userName = SignInActivity.this.userName.getText().toString();
+				final String password = SignInActivity.this.password.getText().toString();
 
-				mSignInModel.signIn(userName, password);
+				signInModel.signIn(userName, password);
 			}
 		});
 
@@ -48,7 +47,7 @@ public class SignInActivity extends Activity implements SignInModel.Observer {
 				(SignInWorkerFragment) getFragmentManager().findFragmentByTag(TAG_WORKER);
 
 		if (retainedWorkerFragment != null) {
-			mSignInModel = retainedWorkerFragment.getSignInModel();
+			signInModel = retainedWorkerFragment.getSignInModel();
 		} else {
 			final SignInWorkerFragment workerFragment = new SignInWorkerFragment();
 
@@ -56,20 +55,20 @@ public class SignInActivity extends Activity implements SignInModel.Observer {
 					.add(workerFragment, TAG_WORKER)
 					.commit();
 
-			mSignInModel = workerFragment.getSignInModel();
+			signInModel = workerFragment.getSignInModel();
 		}
-		mSignInModel.registerObserver(this);
+		signInModel.registerObserver(this);
 	}
 
 	@Override
 	protected void onDestroy() {
 		Log.i(LOG_TAG, "onDestroy");
 		super.onDestroy();
-		mSignInModel.unregisterObserver(this);
+		signInModel.unregisterObserver(this);
 		ButterKnife.unbind(this);
 
 		if (isFinishing()) {
-			mSignInModel.stopSignIn();
+			signInModel.stopSignIn();
 		}
 	}
 
@@ -94,9 +93,9 @@ public class SignInActivity extends Activity implements SignInModel.Observer {
 	}
 
 	private void showProgress(final boolean show) {
-		mUserName.setEnabled(!show);
-		mPassword.setEnabled(!show);
-		mSubmit.setEnabled(!show);
-		mProgress.setVisibility(show ? View.VISIBLE : View.GONE);
+		userName.setEnabled(!show);
+		password.setEnabled(!show);
+		submit.setEnabled(!show);
+		progress.setVisibility(show ? View.VISIBLE : View.GONE);
 	}
 }

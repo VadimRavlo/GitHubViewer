@@ -55,53 +55,39 @@
 			android:visibility="gone"/>
 
 	</RelativeLayout>
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="match_parent">
-		<LinearLayout style="@style/SigninFooterLL">
+	<LinearLayout style="@style/SigninFooterTitleLL">
+		<LinearLayout style="@style/SigninFooterItemLL">
 			<ImageView
 				style="@style/SigninFooterImageView"
 				android:src="@drawable/home_1_ill_build"/>
 			<TextView style="@style/SigninFooterTextView"
-				android:textStyle="bold"
-				android:text="@string/title_1_signin_footer"
-				android:layout_marginBottom="5dp"/>
-			<TextView style="@style/SigninFooterTextView"
-				android:text="@string/text_1_signin_footer"/>
+				android:text="@string/title_1_signin_footer"/>
 		</LinearLayout>
-		<LinearLayout style="@style/SigninFooterLL">
+		<LinearLayout style="@style/SigninFooterItemLL">
 			<ImageView
 				style="@style/SigninFooterImageView"
 				android:src="@drawable/home_2_ill_work"/>
 			<TextView style="@style/SigninFooterTextView"
-				android:textStyle="bold"
-				android:text="@string/title_2_signin_footer"
-				android:layout_marginBottom="5dp"/>
-			<TextView style="@style/SigninFooterTextView"
-				android:text="@string/text_2_signin_footer"/>
+				android:text="@string/title_2_signin_footer"/>
 		</LinearLayout>
-		<LinearLayout style="@style/SigninFooterLL">
+	</LinearLayout>
+	<LinearLayout style="@style/SigninFooterTitleLL">
+		<LinearLayout style="@style/SigninFooterItemLL">
 			<ImageView
 				style="@style/SigninFooterImageView"
 				android:src="@drawable/home_3_ill_projects"/>
 			<TextView style="@style/SigninFooterTextView"
-				android:textStyle="bold"
-				android:text="@string/title_3_signin_footer"
-				android:layout_marginBottom="5dp"/>
-			<TextView style="@style/SigninFooterTextView"
-				android:text="@string/text_3_signin_footer"/>
+				android:text="@string/title_3_signin_footer"/>
 		</LinearLayout>
-		<LinearLayout style="@style/SigninFooterLL">
+		<LinearLayout style="@style/SigninFooterItemLL">
 			<ImageView
 				style="@style/SigninFooterImageView"
 				android:src="@drawable/home_4_ill_platform"/>
 			<TextView style="@style/SigninFooterTextView"
-				android:textStyle="bold"
-				android:text="@string/title_4_signin_footer"
-				android:layout_marginBottom="5dp"/>
-			<TextView style="@style/SigninFooterTextView"
-				android:text="@string/text_4_signin_footer"/>
+				android:text="@string/title_4_signin_footer"/>
 		</LinearLayout>
 	</LinearLayout>
+
+
 
 </LinearLayout>
